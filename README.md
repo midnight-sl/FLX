@@ -1,2 +1,2 @@
 # FLX
-for trainings
+repository for trainings
