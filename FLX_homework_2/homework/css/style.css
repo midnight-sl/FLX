@@ -1,0 +1,134 @@
+/* 
+
+write your code here
+
+*/
+@media print {
+    .tm-sidebar, #about, .blocks, #ideas, .heading.tm-content-box, .carousel-item, #contact, .img-contact-us {
+        display: none;
+    }
+    #mexico {
+        width: 200px;
+        height: 200px; 
+    }
+    .tm-content-box.flex-2-col {
+        display: flex;
+    }
+    section::before {
+        display: none;
+    }
+    
+ }
+
+
+
+.tm-section-title.tm-section-title-box.tm-box-bg-title:hover {
+    background-color: #87CEFA;
+    color: white;
+}
+ p::first-letter {
+     color: #87CEFA;
+     font-size: 30px;
+ }
+
+
+.tm-banner {
+background-color: rgb(220, 220, 220);
+}
+.tm-banner-inner {
+    background-color: white;
+    border: 1px solid gray;
+}
+.tm-main-nav, .tm-content-box {
+    box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.5);
+}
+.tm-content-box.flex-2-col {
+    display: flex;
+    
+}
+#mexico{
+    max-width: 90%;
+    float: right;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    border-top: 20px solid lightskyblue ;
+    border-right: 250px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 250px solid lightskyblue;
+    
+}
+
+#tmCarousel h2.tm-section-title {
+    color: gainsboro;
+    letter-spacing: 5px;
+}
+
+h2 + p {
+    font-style: italic;
+}
+
+p.tm-content-box, p.blocks, p.tm-section-description {
+    line-height: 1.7;
+    text-indent: 30px;
+}
+
+.padding-medium a {
+    color: black;
+}
+.heading a:visited{
+text-decoration-line: underline;
+}
+.heading a:hover{
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    color: lightskyblue;
+    }
+
+    .heading a.text::after{
+        content: "New";
+        color: red;
+        vertical-align: top;
+        font-size: 10px;
+        text-decoration: none;
+    }
+
+    .box-work {
+        padding: 5px;
+    }
+
+    .box-work p::first-letter {
+        color: gray;
+    }
+
+    li.box.box-work:nth-child(even) {
+        background: gainsboro;
+      }
+
+      .contact-form button {
+        float: right;
+        background: white;
+        border: 1px lightskyblue solid;
+        color: lightskyblue;
+        border-radius: 0;
+        padding: 10px 35px;
+    }
+
+    .contact-form button:hover {
+        background: lightskyblue;
+    }
+
+    a.tm-nav-item-link:hover {
+        background: gainsboro;
+    }
+
+    .mandatory-field::after {
+        content: "*";
+        color: red;
+        font-weight: bold;
+    }
+
+    
