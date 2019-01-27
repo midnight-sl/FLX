@@ -49,15 +49,15 @@ header {
     top: 40%;
     left: 25%;
     align-self: flex-end; }
-  header button {
+  header .btn {
     padding: 10px 50px;
     background-color: #1CB0AD;
-    border: none; }
-    header button a.btn.btn-top {
-      text-decoration: none;
-      text-transform: uppercase;
-      color: #EBEBEB;
-      color: #f6f8f7;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #EBEBEB;
+    color: #f6f8f7; }
+    header .btn a.btn.btn-top {
       font: normal 300 15px/24px Roboto, Ubuntu, Cantarell, Helvetica, sans-serif; }
 
 main {

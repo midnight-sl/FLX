@@ -76,13 +76,13 @@ header {
         left: 25%;
         align-self: flex-end;
     }
-    button {
+    .btn {
         padding: 10px 50px;
         background-color: $buttonColor;
         border: none;
+        @include navText;
+        color: $buttonTextColor;
         a.btn.btn-top {
-            @include navText;
-            color: $buttonTextColor;
             font: normal 300 15px/24px $fontsStack;
          }
     }
