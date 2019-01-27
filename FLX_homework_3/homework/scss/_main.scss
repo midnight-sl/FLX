@@ -1,1 +1,203 @@
 // Write your styles here
+@import 'variables1';
+
+@mixin navText {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $navLinksHeaderColor;
+}
+
+ 
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: $headerBackground;  
+    height:100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    
+    .top-wrapper{
+        //width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        
+        img {
+          height: 145px; 
+        }
+        
+    
+        nav {
+           flex-wrap: wrap;
+           flex-direction: row;
+           justify-content: space-around;
+                     
+            a {
+                display: inline-block;
+                @include navText;
+                font: normal 300 15px/24px $fontsStack;
+                font-weight: bold;
+                border-right: 2px solid $navBorderColor;
+                letter-spacing: 2px;
+                padding:15px 115px;
+                
+               
+            }
+        }
+    }
+
+    h1{
+        @include navText;
+        font: normal 24px $fontsStack;
+        font-weight:bold;
+        position: absolute;
+        top: 40%;
+        left: 25%;
+        align-self: flex-end;
+    }
+    button {
+        padding: 10px 50px;
+        background-color: $buttonColor;
+        border: none;
+        position: absolute;
+        top: 45%;
+        left: 43%;
+         a.btn.btn-top {
+            @include navText;
+            font: normal 300 15px/24px $fontsStack;
+         }
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .toolbar {
+        display: flex;
+        justify-content: flex-end;
+        width: 900px;
+        margin: 15px 0 15px 0;
+
+        input {
+            border: 1px solid $searchBorderColor;
+            padding: 10px;
+        }
+    }
+
+    h1 {
+        font: normal 24px $fontsStack;
+        font-weight: bold;
+        text-transform: uppercase; 
+        align-self: flex-end;
+    }
+
+    #list{
+        display: flex;
+        flex-direction: column;
+        width: 900px;
+    }
+
+    article{
+        width: 900px;
+        background: $articleBackground;
+        margin: 20px;
+        margin-top: 1px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+                
+        img {
+            display: inline-block;
+            margin: 10px;
+            
+        }
+
+        .post {
+            display: inline-block;
+            flex-wrap: wrap;
+            margin-right: 25px;
+            
+            .post-description {
+                color: $articlePostDescription;
+                padding: 20px 40px 10px 10px;
+                border-bottom: 1px solid $articleDescriptionBorder;
+            }
+
+            h3 {
+                color: $articleHeaderColor;
+                font:bold 22px $fontsStack;
+                margin: 5px;
+            }
+
+            p {
+                font:normal 15px $fontsStack;
+                line-height: 160%;               
+            }
+        }
+
+        button {
+            padding: 15px 70px;
+            @include navText;
+            background-color: $buttonColor; 
+            border: none;
+            float: right;
+            margin: 15px 25px 0 0;
+        }
+
+        
+    }
+
+    #about {
+        width: 900px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 50px;
+
+        >:first-child{
+            display: flex;
+            flex-direction: column;
+        }
+                
+         p{
+            padding: 10px 0 10px 0;
+            font: normal 15px $fontsStack;
+         }
+
+        #about-section-img {
+            width: 900px;
+            margin-top: 10px;
+            display: flex;
+        }
+
+    }
+
+    #contact{
+        width: 900px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 50px;
+        align-items: flex-end;
+
+        form{
+            display: flex;
+            flex-direction: column;
+
+            .user-creds{
+                display: inline-flex;
+
+                .user-input-group{
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
+

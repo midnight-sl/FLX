@@ -19,7 +19,7 @@
       <header>
         <div class="top-wrapper">
           <div class="logo">
-            <img src="img/logo.png" alt="">
+            <img src="img/logo.png" alt="devine diving logo">
           </div>
 
           <nav>
@@ -32,7 +32,7 @@
           <h1>
             Explore the fantastic beauty of our world
           </h1>
-          <a class="btn btn-top" href="#list" target="_self">Dive now</a>
+          <button><a class="btn btn-top" href="#list" target="_self">Dive now</a></button>
         </section>
       </header>
       <main>
@@ -48,6 +48,7 @@
                 <div class="post-description">
                   Admin Jul 25 &#8226; 2 min
                 </div>
+                
                 <h3>The Top Five Places To Learn To Dive</h3>
                 <p>
                   Divers are really astronauts; gliding weightless through the ocean we observe alien worlds carpeted
@@ -185,15 +186,32 @@
             </p>
           </div>
           <div>
-            <img src="img/about-section.jpg" alt="">
+            <img id="about-section-img" src="img/about-section.jpg" alt="">
           </div>
         </section>
 
         <section class="contact-form" id="contact">
-          <h1>CONTACT US</h1>
-          <h4>For any questions you may have, you can write us:</h4>
-
-          <!-- TODO: write form fields -->
+          <div class="contact-description">
+            <h1>CONTACT US</h1>
+            <h4>For any questions you may have, you can write us:</h4>
+          </div>
+          <form>
+            <div class="user-creds">
+              <div class="user-input-group">
+                <label for="full-name">Full name:</label>
+                <input type="text" id="full-name" />
+              </div>
+              <div class="user-input-group">
+                <label for="email-address">Email address:</label>
+                <input type=email id="email-address" />
+              </div>
+            </div>
+            <label for="question">Write your question below</label>
+            <br />       
+            <textarea cols="117" rows="8"></textarea>
+            <br />
+            <button type="submit">SEND</button>
+          </form>
 
         </section>
       </main>
