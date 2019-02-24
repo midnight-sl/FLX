@@ -1,0 +1,47 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  width: 100vw;
+}
+.new-action {
+  display: inline-flex;
+  border-bottom: 3px solid #000000;
+  margin: 20px;
+  padding-bottom: 20px;
+  width: 96vw;
+  justify-content: space-evenly;
+}
+#action-input {
+  border: 1px solid #000000;
+  width: 90%;
+  height: 20px;
+}
+#action-submit {
+  border: none;
+  background-color: transparent;
+}
+.action-list {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 95vw;
+}
+.listItems {
+  width: 90%;
+  display: inline-flex;
+  justify-content: space-between;
+}
+.listItems:hover {
+  background-color: lightblue;
+}
+#pet-paw {
+  position: fixed;
+  bottom: 5vh;
+  font-size: 50px;
+  align-self: center;
+}
+.warning {
+  color: #FF0000;
+  font-size: 20px;
+}
