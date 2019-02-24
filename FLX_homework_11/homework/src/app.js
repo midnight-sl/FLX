@@ -5,7 +5,7 @@ let itemId = 0;
 let tagIndex = 0;
 let h1Index = 0;
 let addAction = 1;
-let dragLocation = 0;
+let dragYloc = 0;
 
 const button = document.getElementById('action-submit')[buttonIndex];
 const addBox = document.getElementById('add-box');
@@ -54,31 +54,31 @@ const listFullWarningMsg = (actionCount) => {
 
 
 const drag = (ev) => {
-  dragLocation = ev.screenY;
+  dragYloc = ev.screenY;
   ev.dataTransfer.setData('text', ev.target.id);
 }
 
-const preventDrop = (ev) => {
+const prewentDrop = (ev) => {
   ev.preventDefault();
 }
 
 const drop = (ev) => {
-    ev.preventDefault();
-    const data = ev.dataTransfer.getData('text');
-    const droppedContainer = ev.target.closest('#listItems');
-    const droppedElement = ev.target.closest('.listItems');
-    console.log(ev.target.nextSibling)
-    const dropLocation = ev.screenY;
-    if (dragLocation > dropLocation) {
-      droppedContainer.insertBefore(document.getElementById(data), droppedElement);
-    } else {
-        const nextEl = droppedElement.nextSibling;
-        if (nextEl) {
-          droppedContainer.insertBefore(document.getElementById(data), nextEl);
-        } else {
-          droppedContainer.appendChild(document.getElementById(data));
-        }
-    }    
+  ev.preventDefault();
+  const data = ev.dataTransfer.getData('text');
+  const dropContainer = ev.target.closest('#listItems');
+  const dropElement = ev.target.closest('.listItems');
+  console.log(ev.target.nextSibling)
+  const dropYCord = ev.screenY;
+  if (dragYloc > dropYCord) {
+      dropContainer.insertBefore(document.getElementById(data), dropElement);
+  } else {
+      const nextEl = dropElement.nextSibling;
+      if (nextEl) {
+          dropContainer.insertBefore(document.getElementById(data), nextEl);
+      } else {
+          dropContainer.appendChild(document.getElementById(data));
+      }
+  }    
 }
 
 
