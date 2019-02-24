@@ -7,13 +7,14 @@ let h1Index = 0;
 let addAction = 1;
 let dragYloc = 0;
 
-const button = document.getElementById('action-submit')[buttonIndex];
+
+const button = document.getElementById('action-submit');
 const addBox = document.getElementById('add-box');
 addBox.setAttribute('onclick', 'addNewAction()');
 
 const listItems = document.getElementById('list-items');
 listItems.setAttribute('ondrop', 'drop(event)');
-listItems.setAttribute('ondragover', 'preventDrop(event)');
+listItems.setAttribute('ondragover', 'allowDrop(event)');
 
 const markActionAsDone = (el) => {
   if (el.target.innerHTML === 'check_box_outline_blank') {
@@ -25,7 +26,7 @@ const deleteAction = (el) => {
   el.target.parentElement.remove();
   let warn = document.getElementsByClassName('warning')[tagIndex];
   if (warn) {
-    button.removeAtribute('disabled');
+    button.setAttribute('disabled', false);
     document.getElementById('action-input').removeAttribute('disabled');
     warn.remove();
   }
@@ -41,33 +42,34 @@ const allCorrect = () => {
 
 
 const listFullWarningMsg = (actionCount) => {
-  const warningMsg = document.createElement('div');
-  warningMsg.innerHTML = '<p>Maximum item per list are created</p>';
-  warningMsg.setAttribute('class', 'warning');
-
-  if (actionCount > maxActionNum) {
+  
+  console.log(actionCount, maxActionNum);
+  if (actionCount >= maxActionNum) {
+    const warningMsgDiv = document.createElement('h6');    
+    const warningMsg = 'Maximum item per list are created';
     button.setAttribute('disabled', true);
-    document.getElementById('action-input').setAttribute('disabled', true);   
-    document.getElementsByTagName('h1')[h1Index].appendChild(warningMsg);
+    document.getElementById('action-input').setAttribute('disabled', true);
+    warningMsgDiv.setAttribute('class', 'warning');
+    warningMsgDiv.innerHTML = warningMsg;
+    document.getElementsByTagName('h1')[h1Index].appendChild(warningMsgDiv);
   }
 }
-
 
 const drag = (ev) => {
   dragYloc = ev.screenY;
   ev.dataTransfer.setData('text', ev.target.id);
 }
 
-const prewentDrop = (ev) => {
+const allowDrop = (ev) => {
   ev.preventDefault();
 }
 
 const drop = (ev) => {
   ev.preventDefault();
   const data = ev.dataTransfer.getData('text');
-  const dropContainer = ev.target.closest('#listItems');
+  ev.target.appendChild(document.getElementById(data));
+  const dropContainer = ev.target.closest('#list-items');
   const dropElement = ev.target.closest('.listItems');
-  console.log(ev.target.nextSibling)
   const dropYCord = ev.screenY;
   if (dragYloc > dropYCord) {
       dropContainer.insertBefore(document.getElementById(data), dropElement);
