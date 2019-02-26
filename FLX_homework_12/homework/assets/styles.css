@@ -1,0 +1,50 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#task-input {
+  width: 300px;
+  border-radius: 7px;
+  margin: 5px 20px;
+  padding: 5px;
+}
+
+.description {
+  cursor: pointer;
+  min-width: 150px;
+  text-decoration: none;
+  color: #000000;
+  font-size: 25px;
+}
+
+.button {
+  height: 30px;
+  border-radius: 8px;
+  padding: 3px 20px;
+  font-size: 20px;
+}
+
+.btns-row {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 310px;
+  padding-top: 10px;
+}
+
+.checkbox {
+  justify-self: flex-end;
+}
+
+.list-item {
+  display: flex;
+  padding: 10px;
+  width: 300px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.empty-list {
+  font-size: 20px;
+}
